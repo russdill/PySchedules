@@ -24,7 +24,7 @@ soap_message_xml_template = """<?xml version='1.0' encoding='utf-8'?>
   </SOAP-ENV:Body>
   </SOAP-ENV:Envelope>"""
 
-url = 'http://webservices.schedulesdirect.tmsdatadirect.com/schedulesdirect/tvlistings/xtvdService'
+url = 'http://dd.schedulesdirect.org/schedulesdirect/tvlistings/xtvdService'
 realm = 'TMSWebServiceRealm'
 
 request_headers = { 'Accept-Encoding': 'gzip',
@@ -65,7 +65,7 @@ def get_file_object(username, password, utc_start=None, utc_stop=None):
     
     soap_message_xml = (soap_message_xml_template % replacements)
 
-    authinfo = urllib2.HTTPDigestAuthHandler()
+    authinfo = urllib2.HTTPBasicAuthHandler()
     authinfo.add_password(realm, url, username, password)
 
     try:
