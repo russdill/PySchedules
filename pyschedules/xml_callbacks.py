@@ -45,7 +45,7 @@ class XmlCallbacks(sax.ContentHandler, sax.ErrorHandler):
     def _parseDateTime(self, time):
         if time:
             try:
-                return DateTime.ISO.ParseDateTime(time).timetuple()
+                return DateTime.ISO.ParseDateTime(time)
             except Exception, e:
                 raise ValueError("Time '%s' is invalid: %s" % (time, e))
         else:

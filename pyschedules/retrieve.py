@@ -52,7 +52,7 @@ def get_file_object(username, password, utc_start=None, utc_stop=None):
     """Make the connection. Return a file-like object."""
 
     if not utc_start:
-        utc_start = datetime.now()
+        utc_start = datetime.utcnow()
 
     if not utc_stop:
         utc_stop = utc_start + timedelta(days=1)
