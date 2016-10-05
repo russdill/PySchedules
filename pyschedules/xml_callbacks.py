@@ -75,6 +75,7 @@ class XmlCallbacks(sax.ContentHandler, sax.ErrorHandler):
                                     (schemaVersion,
                                      validFrom.strftime('%Y/%m/%d'),
                                      validTo.strftime('%Y/%m/%d')))
+        self._importer.new_xtvd(schemaVersion, validFrom, validTo)
 
     def _startStationsNode(self, name, attrs):
         """Process the start of a node under xtvd/stations"""

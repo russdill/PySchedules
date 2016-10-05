@@ -42,3 +42,7 @@ class IEntityTrigger(object):
 
         raise NotImplementedError()
 
+    def new_xtvd(self, schemaVersion, validFrom, validTo):
+        """Callback run for header entry"""
+
+        raise NotImplementedError()
